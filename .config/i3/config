@@ -114,22 +114,30 @@ bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 bindsym $mod+Shift+space 	floating toggle
-bindsym $mod+space		focus mode_toggle
+bindsym $mod+space			focus mode_toggle
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+a focus parent
+bindsym $mod+z focus child
 
 #bindsym $mod+Escape		workspace prev
 #bindsym $mod+Shift+Escape 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
+bindsym $mod+Shift+e 	exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
 
 # bindsym $mod+BackSpace
 #bindsym $mod+Shift+BackSpace	exec --no-startup-id prompt "Reboot computer?" "$reboot"
 
-bindsym $mod+grave		exec --no-startup-id dmenuunicode
+bindsym $mod+grave			exec --no-startup-id dmenuunicode
 ##bindsym $mod+asciitilde
 
 #STOP/HIDE EVERYTHING:
 #bindsym $mod+Shift+Delete	exec --no-startup-id lmc truemute ; exec --no-startup-id lmc pause ; exec --no-startup-id pauseallmpv; workspace 0; exec $term -e htop ; exec $term -e ranger
 
 # Show selection:
-bindsym $mod+Insert		exec --no-startup-id showclip
+bindsym $mod+Insert			exec --no-startup-id showclip
 #bindsym $mod+Pause		exec --no-startup-id xcqr
 
 # #---Letter Key Bindings---# #
@@ -144,6 +152,7 @@ bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*
 
 #bindsym $mod+r 			exec $term -e ranger
 #bindsym $mod+Shift+r		exec --no-startup-id winresize
+bindsym $mod+Shift+r		restart
 
 #bindsym $mod+t			split toggle
 #bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
@@ -151,32 +160,32 @@ bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*
 #bindsym $mod+y			exec $term -e calcurse
 #bindsym $mod+Shift+y		exec --no-startup-id i3resize left
 
-bindsym $mod+u			exec --no-startup-id ddspawn tmuxdd
+bindsym $mod+p				exec --no-startup-id ddspawn tmuxdd
 #bindsym $mod+Shift+u		exec --no-startup-id i3resize down
 
 #bindsym $mod+i 			exec $term -e htop
 #bindsym $mod+Shift+i		exec --no-startup-id i3resize up
 
-bindsym $mod+o			sticky toggle
+bindsym $mod+o				sticky toggle
 #bindsym $mod+Shift+o		exec --no-startup-id i3resize right
 
 #bindsym $mod+p			exec --no-startup-id lmc toggle
 #bindsym $mod+Shift+p		exec --no-startup-id lmc pause
 
-bindsym $mod+a			exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
+bindsym $mod+m				exec --no-startup-id ddspawn dropdowncalc -f mono:pixelsize=24
 #bindsym $mod+Shift+a		exec $term -e pulsemixer
 
 #bindsym $mod+s			gaps inner current plus 5
 #bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec --no-startup-id dmenu_run
+bindsym $mod+d				exec --no-startup-id dmenu_run
 #bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 #set $freeze Distraction-free mode (super+shift+f to reactivate bindings)
 #mode "$freeze" { bindsym $mod+Shift+f mode "default"
 #}
 
-bindsym $mod+f			fullscreen toggle
+bindsym $mod+Shift+f		fullscreen toggle
 #bindsym $mod+Shift+f		mode "$freeze" ;; exec --no-startup-id notify-send "<b>Distraction-free mode activated.</b> Press Super+Shift+f to return."
 
 #bindsym $mod+g			workspace prev
@@ -197,8 +206,9 @@ bindsym $mod+f			fullscreen toggle
 #bindsym $mod+z			gaps outer current plus 5
 #bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x			exec --no-startup-id lockscreen
+bindsym $mod+x				exec --no-startup-id lockscreen
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
+bindsym $mod+Control+x		exec --no-startup-id prompt "Reboot computer?" "$reboot"
 
 #bindsym $mod+c
 #bindsym $mod+Shift+c		exec --no-startup-id camtoggle
@@ -212,10 +222,13 @@ bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdow
 #bindsym $mod+n			exec $term -e newsboat && pkill -RTMIN+6 i3blocks
 #bindsym $mod+Shift+n		floating toggle; sticky toggle; exec --no-startup-id bottomright
 
-bindsym $mod+m 			exec --no-startup-id $term -e ncmpcpp
+#bindsym $mod+m 				exec --no-startup-id $term -e ncmpcpp
 #bindsym $mod+Shift+m		exec --no-startup-id lmc mute
 
 # #---Workspace Bindings---# #
+
+#focus and control
+
 #bindsym $mod+Home		workspace $ws1
 #bindsym $mod+Shift+Home		move container to workspace $ws1
 #bindsym $mod+End		workspace $ws10
@@ -269,6 +282,18 @@ bindsym $mod+Shift+7	move container to workspace $ws7
 bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
+
+mode "resize" {
+	bindsym Left resize shrink width 5 px or 5 ppt
+	bindsym Up resize grow height 5 px or 5 ppt
+	bindsym Down resize shrink height 5 px or 5 ppt
+	bindsym Right resize grow width 5 px or 5 ppt
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
 
 #for_window [class="Pinentry"] sticky enable
 #for_window [class="sent"] border pixel 0px
