@@ -6,12 +6,12 @@ There are my dotfiles! The name of the repo, "voidrice", came from the fact they
 ## Programs whose configs can be found here
 
 + i3 (i3-gaps)
-#+ Xresourses info used by [my st build](https://github.com/lukesmithxyz/st) as a terminal
+<!--+ Xresourses info used by [my st build](https://github.com/lukesmithxyz/st) as a terminal-->
 + vim
 + bash
-#+ ranger (see full documentation [here](.config/ranger/luke_ranger_readme.md))
-#+ ~~mutt/msmtp/offlineimap~~ Now moved to [LukeSmithxyz/mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard)
-#+ calcurse
+<!--+ ranger (see full documentation [here](.config/ranger/luke_ranger_readme.md))-->
+<!--+ ~~mutt/msmtp/offlineimap~~ Now moved to [LukeSmithxyz/mutt-wizard](https://github.com/LukeSmithxyz/mutt-wizard)-->
+<!--+ calcurse-->
 + ncmpcpp and mpd (my main music player)
 + mpv
 + neofetch
@@ -19,13 +19,13 @@ There are my dotfiles! The name of the repo, "voidrice", came from the fact they
 
 ## More documentation
 
-#There's a full .pdf write-up of the repository [here: https://larbs.xyz/larbs_readme.pdf](https://larbs.xyz/larbs_readme.pdf).
+<!--There's a full .pdf write-up of the repository [here: https://larbs.xyz/larbs_readme.pdf](https://larbs.xyz/larbs_readme.pdf).-->
 
-#Or, if you actually installed my dotfiles, you can just press `Super+F1` to
-#show the same document offline.
+<!--Or, if you actually installed my dotfiles, you can just press `Super+F1` to-->
+<!--show the same document offline.-->
 
-#In the system, you can also press `Super+Shift+e` to watch tutorial videos on
-#different programs used. See [my YouTube channel](https://youtube.com/c/LukeSmithxyz) for more.
+<!--In the system, you can also press `Super+Shift+e` to watch tutorial videos on-->
+<!--different programs used. See [my YouTube channel](https://youtube.com/c/LukeSmithxyz) for more.-->
 
 The command `getkeys` will also show basic key binds for different programs.
 
@@ -39,11 +39,11 @@ qutebrowser and fish.
 
 ## Like my rice?
 
-#Feel free to add other suggestions and I may implement them.
+Feel free to add other suggestions and I may implement them.
 
-#I have a job, but every penny I get from followers or subscribers is more incentive to perfect what I'm doing.
-#You can donate to me at [https://paypal.me/LukeMSmith](https://paypal.me/LukeMSmith).
-#Donations are earmarked for whatever the donator wants, usually to go to funds for buying new equipment for the [YouTube channel](https://youtube.com/c/LukeSmithxyz).
+<!--I have a job, but every penny I get from followers or subscribers is more incentive to perfect what I'm doing.-->
+<!--You can donate to me at [https://paypal.me/LukeMSmith](https://paypal.me/LukeMSmith).-->
+<!--Donations are earmarked for whatever the donator wants, usually to go to funds for buying new equipment for the [YouTube channel (https://youtube.com/c/LukeSmithxyz).-->
 
 # "Dependencies" and programs used
 
