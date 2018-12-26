@@ -5,10 +5,10 @@
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')$PATH"
 export EDITOR="vim"
 export TERMINAL="st"
-export BROWSER="firefox"
-export READER="zathura"
-export BIB="$HOME/Documents/LaTeX/uni.bib"
-export REFER="$HOME/.referbib"
+export BROWSER="google-chrome-stable"
+#export READER="zathura"
+#export BIB="$HOME/Documents/LaTeX/uni.bib"
+#export REFER="$HOME/.referbib"
 # PIX is here I have LARBS keep icons. Subject to change, hence a variable.
 export PIX="$HOME/.scripts/pix"
 export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
@@ -29,6 +29,8 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
 # Start graphical server if i3 not already running.
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
+# Setting the background:
+exec --no-startup-id "$HOME/.fehbg"
 
 # Switch escape and caps and use wal colors if tty:
 sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null

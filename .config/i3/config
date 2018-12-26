@@ -49,8 +49,8 @@ for_window [instance="dropdowncalc"] border pixel 2
 for_window [instance="dropdowncalc"] sticky enable
 
 # #---Starting External Scripts---# #
-# Setting the background:
-exec --no-startup-id feh --bg-scale ~/.config/wall.png
+# Load Default arandr config
+exec "$HOME/.screenlayout/default.sh"
 # Starts dunst for notifications:
 exec --no-startup-id dunst
 # Composite manager:
