@@ -1,5 +1,5 @@
 ## Conner's edit of Luke's GNU/Linux Dotfiles
-## Some lines are commented out to signify things that I have removed from my build
+<!--Some lines are commented out to signify things that I have removed from my build-->
 
 There are my dotfiles! The name of the repo, "voidrice", came from the fact they were originally on my Void Linux machine, but these files are distro-independent. In fact, I now push changes from my X200 running Parabola or my X220 running Arch.
 

@@ -68,40 +68,42 @@ exec_always --no-startup-id podentr
 
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
-set_from_resource $black	color8  #000000
-set_from_resource $darkred	color1  #000000
-set_from_resource $red		color9  #000000
+set_from_resource $black		color8  #000000
+set_from_resource $darkred		color1  #000000
+set_from_resource $red			color9  #000000
 set_from_resource $darkgreen	color2  #000000
-set_from_resource $green	color10 #000000
+set_from_resource $green		color10 #000000
 set_from_resource $darkyellow	color3  #000000
-set_from_resource $yellow	color11 #000000
-set_from_resource $darkblue	color4  #000000
-set_from_resource $blue		color12 #000000
+set_from_resource $yellow		color11 #000000
+set_from_resource $darkblue		color4  #000000
+set_from_resource $blue			color12 #000000
 set_from_resource $darkmagenta	color5  #000000
-set_from_resource $magenta	color13 #000000
-set_from_resource $darkcyan	color6  #000000
-set_from_resource $cyan		color14 #000000
+set_from_resource $magenta		color13 #000000
+set_from_resource $darkcyan		color6  #000000
+set_from_resource $cyan			color14 #000000
 set_from_resource $darkwhite	color7  #000000
-set_from_resource $white	color15 #000000
-set $transparent		#00000000
+set_from_resource $white		color15 #000000
+set $transparent				#00000000
 
-#                       BORDER		BACKGROUND	TEXT		INDICATOR   CHILD_BORDER
-client.focused		$red		$red		$magenta	$darkmagenta		$darkblue
-client.unfocused	$transparent	$blue		$white		$darkblue		$darkblack
-client.focused_inactive	$transparent	$blue		$white		$darkblue		$darkblack
-client.urgent		$darkred	$darkred	$black		$darkred		$darkred
-client.background $black
+#							BORDER			BACKGROUND	TEXT		INDICATOR   	CHILD_BORDER
+client.focused				$blue			$darkblue	$white		$red			$darkblue
+client.unfocused			$transparent	$darkblack	$white		$darkred		$darkblack
+client.focused_inactive		$transparent	$darkblack	$white		$darkred		$darkblack
+client.urgent				$darkred		$darkred	$black		$darkred		$darkred
+client.background 	$black
 
 bar {
-	font pango:mono 10
+	font pango:mono bold 10
 	colors {
 			background $darkblack
 			statusline $darkwhite
 			separator $cyan
-			focused_workspace  $blue $darkblue $darkblack
-        		active_workspace   $blue $blue $darkwhite
-      			inactive_workspace $darkblack $darkblack $white
-        		urgent_workspace   $darkblack $darkblack $white
+			
+			#					BORDER		BACKGROUND	TEXT
+			focused_workspace	$blue 		$darkblue 	$darkblack
+        	active_workspace	$blue 		$darkblack	$white
+      		inactive_workspace	$darkblack	$darkblack 	$white
+        	urgent_workspace	$darkred 	$darkblack 	$white
 		}
 	status_command i3blocks
 	position top
@@ -131,6 +133,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+e layout default
 bindsym $mod+a focus parent
 bindsym $mod+z focus child
 
@@ -250,14 +253,20 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+#bindsym $mod+Prior			workspace prev
+#bindsym $mod+Shift+Prior	move container to workspace prev
+#bindsym $mod+Next			workspace next
+#bindsym $mod+Shift+Next		move container to workspace next
+
+bindsym $mod+Prior			output left
+bindsym $mod+Shift+Prior	move container to output left
+bindsym $mod+Next			output right
+bindsym $mod+Shift+Next		move container to output right
+
 #bindsym $mod+Home		workspace $ws1
 #bindsym $mod+Shift+Home		move container to workspace $ws1
 #bindsym $mod+End		workspace $ws10
 #bindsym $mod+Shift+End		move container to workspace $ws10
-bindsym $mod+Prior		workspace prev
-bindsym $mod+Shift+Prior	move container to workspace prev
-bindsym $mod+Next		workspace next
-bindsym $mod+Shift+Next		move container to workspace next
 #bindsym $mod+Tab		workspace back_and_forth
 #bindsym $mod+XF86Back		workspace prev
 #bindsym $mod+Shift+XF86Back	move container to workspace prev
