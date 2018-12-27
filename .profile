@@ -10,7 +10,7 @@ export BROWSER="google-chrome-stable"
 #export BIB="$HOME/Documents/LaTeX/uni.bib"
 #export REFER="$HOME/.referbib"
 # PIX is here I have LARBS keep icons. Subject to change, hence a variable.
-export PIX="$HOME/.scripts/pix"
+#export PIX="$HOME/.scripts/pix"
 export SUDO_ASKPASS="$HOME/.scripts/tools/dmenupass"
 
 # less/man colors

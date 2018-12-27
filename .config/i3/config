@@ -116,6 +116,7 @@ bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return	exec --no-startup-id samedir
 
 bindsym $mod+Shift+e 		exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
+bindsym $mod+Control+e		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
 bindsym $mod+x				exec --no-startup-id lockscreen
 bindsym $mod+Shift+x		exec --no-startup-id prompt "Shutdown computer?" "$shutdown"
 bindsym $mod+Control+x		exec --no-startup-id prompt "Reboot computer?" "$reboot"
@@ -333,7 +334,6 @@ bindsym $mod+r mode "resize"
 bindsym $mod+F1		exec --no-startup-id groff -kejpt -mom ~/.readme.mom -Tpdf | zathura -
 #bindsym $mod+F2		restart
 #bindsym $mod+F3		exec --no-startup-id displayselect
-#bindsym $mod+F4		exec --no-startup-id prompt "Hibernate computer?" "$hibernate"
 #bindsym $mod+F5		exec --no-startup-id $netrefresh
 #bindsym $mod+F6		exec --no-startup-id $term -e transmission-remote-cli
 #bindsym $mod+F7		exec --no-startup-id td-toggle
