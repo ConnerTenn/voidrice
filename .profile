@@ -3,8 +3,8 @@
 
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$(du "$HOME/.scripts/" | cut -f2 | tr '\n' ':')$PATH"
-export EDITOR="vim"
-export TERMINAL="st"
+export EDITOR="code"
+export TERMINAL="xfce4-terminal"
 export BROWSER="google-chrome-stable"
 #export READER="zathura"
 #export BIB="$HOME/Documents/LaTeX/uni.bib"
@@ -23,7 +23,7 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[1;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 
-[ ! -f ~/.shortcuts ] && shortcuts >/dev/null 2>&1
+#[ ! -f ~/.shortcuts ] && shortcuts >/dev/null 2>&1 #generate shortcut aliases from .bmdirs and .bmfiles
 
 [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
@@ -31,4 +31,4 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x i3 >/dev/null && exec startx
 
 # Switch escape and caps and use wal colors if tty:
-sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
+#sudo -n loadkeys ~/.scripts/ttymaps.kmap 2>/dev/null
